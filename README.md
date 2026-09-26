@@ -46,7 +46,7 @@ The app is static; anything that serves files works. A local web server is recom
 
 **Option 1 — Python (verified)**
 ```bash
-cd ExpenseX-Corporate-Showcase
+cd ExpenseX-Corporate
 python -m http.server 8765
 ```
 Open <http://localhost:8765/> (or `http://127.0.0.1:8765/`).
@@ -228,9 +228,3 @@ js/core/              constants, storage (only localStorage access), money, date
 js/                   domain modules: permissions, auth, users, projects, limits, receipts, expenses,
                       reimbursements, notifications, activity, analytics, settings, demo-data;
                       UI helpers: ui, layout, guard, charts, expense-view
-js/pages/             one script per page
-assets/               logo mark, favicon, touch icon
-```
-
-See `VIVA.md` for a presentation/viva guide, `CLAUDE.md` for architecture rules, and `PROJECT_PROGRESS.md` for the
-build and verification record.
