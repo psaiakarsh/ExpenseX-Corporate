@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Dashboard · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <div class="page-header">
+      <div>
+        <h2 id="company">Company overview</h2>
+        <p>Company-level aggregates only. Individual expenses stay private to each employee and their manager.</p>
+      </div>
+      <a class="btn btn-primary" href="users.html">Manage users</a>
+    </div>
+
+    <div id="attention" style="margin-bottom:24px"></div>
+
+    <section aria-label="People">
+      <div class="stats stats-4" id="people-stats"></div>
+    </section>
+    <section aria-label="Company spending">
+      <div class="stats" id="money-stats"></div>
+    </section>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <section class="card" aria-labelledby="monthly-title">
+        <div class="card-header"><h2 id="monthly-title">Monthly company spending</h2><span class="muted xsmall">Last 6 months</span></div>
+        <div id="monthly-chart"></div>
+      </section>
+      <section class="card" aria-labelledby="status-title">
+        <div class="card-header"><h2 id="status-title">Status distribution</h2><span class="muted xsmall">Submitted claims</span></div>
+        <div id="status-chart"></div>
+        <p class="small" id="approval-line" style="margin-top:12px"></p>
+      </section>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <section class="card" aria-labelledby="category-title">
+        <div class="card-header"><h2 id="category-title">Category distribution</h2></div>
+        <div id="category-chart"></div>
+      </section>
+      <section class="card" aria-labelledby="teams-title">
+        <div class="card-header"><h2 id="teams-title">Team totals</h2><span class="muted xsmall">Privacy-safe</span></div>
+        <div id="teams-chart"></div>
+      </section>
+    </div>
+
+    <div class="grid-2">
+      <section class="card" aria-labelledby="activity-title">
+        <div class="card-header"><h2 id="activity-title">Recent activity</h2><a href="activity.html">View all</a></div>
+        <div id="activity"></div>
+      </section>
+      <section class="card" aria-labelledby="privacy-title">
+        <div class="card-header"><h2 id="privacy-title">What the Admin can see</h2></div>
+        <ul class="stack small" id="privacy-rules"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/pages/admin-dashboard.js"></script>
+</body>
+</html>

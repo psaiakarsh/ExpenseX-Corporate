@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Users · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <div class="page-header">
+      <div>
+        <h2>Users &amp; teams</h2>
+        <p>Create managers and employees, assign employees to teams, and deactivate or reactivate accounts. Accounts are
+          never deleted, so their history stays intact.</p>
+      </div>
+      <div class="row">
+        <button class="btn btn-secondary" type="button" id="new-employee">New employee</button>
+        <button class="btn btn-primary" type="button" id="new-manager">New manager</button>
+      </div>
+    </div>
+
+    <form class="toolbar" id="toolbar" role="search" aria-label="Filter users" onsubmit="return false">
+      <div class="field toolbar-search">
+        <label for="search">Search</label>
+        <input class="control" id="search" name="search" type="search" placeholder="Name, email or department">
+      </div>
+      <div class="field">
+        <label for="role">Role</label>
+        <select class="control" id="role" name="role">
+          <option value="">All roles</option>
+          <option value="manager">Managers</option>
+          <option value="user">Employees</option>
+          <option value="admin">Admins</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="status">Status</label>
+        <select class="control" id="status" name="status">
+          <option value="">Active and inactive</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <div class="field"><label for="manager">Manager</label><select class="control" id="manager" name="manager"></select></div>
+      <div class="field">
+        <label for="sort">Sort</label>
+        <select class="control" id="sort" name="sort">
+          <option value="role">Role, then name</option>
+          <option value="name">Name A–Z</option>
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </div>
+    </form>
+
+    <p class="result-count" id="count" aria-live="polite"></p>
+    <div id="table"></div>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/pages/admin-users.js"></script>
+</body>
+</html>

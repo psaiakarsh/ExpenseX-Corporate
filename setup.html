@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <meta name="description" content="Set up a new company in ExpenseX Corporate.">
+  <title>Set up company · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <main class="auth-page" id="main">
+    <section class="card auth-card" aria-labelledby="setup-title">
+      <div class="brand brand-lg auth-brand">
+        <img class="brand-mark" src="assets/expensex-mark.png" alt="" width="56" height="56">
+        <span class="brand-text"><span class="brand-name">Expense<span>X</span></span><span class="brand-label">Corporate</span></span>
+      </div>
+      <div>
+        <h1 id="setup-title">Set up your company</h1>
+        <p class="muted small" id="setup-intro" hidden>First run only: this creates the company and its first
+          <strong>Admin</strong> account. The admin then creates managers and assigns employees.</p>
+      </div>
+
+      <div class="callout callout-info" id="setup-done" role="status" hidden>
+        <span aria-hidden="true" data-icon="info"></span>
+        <div>
+          <strong>Initial setup has already been completed</strong>
+          <p>This company already has accounts, so the setup page is closed. Additional admins and managers can't be
+            created here.</p>
+          <p style="margin-top:8px"><a href="login.html">Go to login</a></p>
+        </div>
+      </div>
+
+      <form id="setup-form" class="form" novalidate hidden>
+        <div class="field">
+          <label for="companyName">Company name</label>
+          <input id="companyName" name="companyName" autocomplete="organization" required maxlength="50" aria-describedby="companyName-error">
+          <p class="field-error" id="companyName-error" data-error-for="companyName" hidden></p>
+        </div>
+        <div class="field">
+          <label for="name">Admin full name</label>
+          <input id="name" name="name" autocomplete="name" required maxlength="50" aria-describedby="name-error">
+          <p class="field-error" id="name-error" data-error-for="name" hidden></p>
+        </div>
+        <div class="field">
+          <label for="email">Admin email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="100" aria-describedby="email-error">
+          <p class="field-error" id="email-error" data-error-for="email" hidden></p>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required maxlength="72" aria-describedby="password-hint password-error">
+          <p class="field-hint" id="password-hint">At least 6 characters.</p>
+          <p class="field-error" id="password-error" data-error-for="password" hidden></p>
+        </div>
+        <div class="field">
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required maxlength="72" aria-describedby="confirmPassword-error">
+          <p class="field-error" id="confirmPassword-error" data-error-for="confirmPassword" hidden></p>
+        </div>
+        <p class="form-error" role="alert" data-form-error hidden></p>
+        <button class="btn btn-primary btn-block" type="submit">Create company and admin</button>
+      </form>
+      <p class="auth-switch"><a href="login.html">Back to login</a></p>
+    </section>
+  </main>
+
+  <script src="js/core/constants.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/money.js"></script>
+  <script src="js/core/dates.js"></script>
+  <script src="js/core/validate.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/permissions.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/activity.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/pages/setup.js"></script>
+</body>
+</html>

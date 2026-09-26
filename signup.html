@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <meta name="description" content="Create an ExpenseX Corporate employee account.">
+  <title>Employee signup · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <main class="auth-page" id="main">
+    <section class="card auth-card" aria-labelledby="signup-title">
+      <div class="brand brand-lg auth-brand">
+        <img class="brand-mark" src="assets/expensex-mark.png" alt="" width="56" height="56">
+        <span class="brand-text"><span class="brand-name">Expense<span>X</span></span><span class="brand-label">Corporate</span></span>
+      </div>
+      <div>
+        <h1 id="signup-title">Create an employee account</h1>
+        <p class="muted small" id="company-name"></p>
+      </div>
+
+      <div class="callout callout-info" id="signup-info">
+        <span aria-hidden="true" data-icon="info"></span>
+        <p>Public signup always creates an <strong>Employee</strong> account. An administrator assigns you to a
+          manager; until then you can save expense drafts but not submit them.</p>
+      </div>
+
+      <div class="callout callout-warning" id="signup-closed" hidden>
+        <span aria-hidden="true" data-icon="alert"></span>
+        <div>
+          <p id="signup-closed-text"></p>
+          <p style="margin-top:8px"><a href="login.html">Back to login</a></p>
+        </div>
+      </div>
+
+      <div class="stack" id="signup-success" role="status" hidden>
+        <div class="callout callout-info">
+          <span aria-hidden="true" data-icon="check"></span>
+          <div>
+            <strong id="signup-success-title">Account created</strong>
+            <p>An administrator must assign you to a manager before you can submit expenses. Until then you can
+              log in and save expense drafts.</p>
+            <p class="muted small" style="margin-top:8px">Taking you to the login page…</p>
+          </div>
+        </div>
+        <a class="btn btn-primary btn-block" href="login.html" id="go-login">Continue to login</a>
+      </div>
+
+      <form id="signup-form" class="form" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" autocomplete="name" required maxlength="50" aria-describedby="name-error">
+          <p class="field-error" id="name-error" data-error-for="name" hidden></p>
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="100" aria-describedby="email-error">
+          <p class="field-error" id="email-error" data-error-for="email" hidden></p>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required maxlength="72" aria-describedby="password-hint password-error">
+          <p class="field-hint" id="password-hint">At least 6 characters.</p>
+          <p class="field-error" id="password-error" data-error-for="password" hidden></p>
+        </div>
+        <div class="field">
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required maxlength="72" aria-describedby="confirmPassword-error">
+          <p class="field-error" id="confirmPassword-error" data-error-for="confirmPassword" hidden></p>
+        </div>
+        <p class="form-error" role="alert" data-form-error hidden></p>
+        <button class="btn btn-primary btn-block" type="submit">Create employee account</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+    <p class="auth-note">Prototype: data stays in this browser. Sign-in is simulated and not secure.</p>
+  </main>
+
+  <script src="js/core/constants.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/money.js"></script>
+  <script src="js/core/dates.js"></script>
+  <script src="js/core/validate.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/permissions.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/activity.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/pages/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Settings · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <div class="grid-2">
+      <section class="card" aria-labelledby="company-title">
+        <div class="card-header"><h2 id="company-title">Company settings</h2></div>
+        <form id="settings-form" class="form" novalidate>
+          <div class="field">
+            <label for="companyName">Company name</label>
+            <input id="companyName" name="companyName" required maxlength="50" autocomplete="organization" aria-describedby="companyName-error">
+            <p class="field-error" id="companyName-error" data-error-for="companyName" hidden></p>
+          </div>
+          <div class="field">
+            <label for="limitWarningPercent">Spending-limit warning at (%)</label>
+            <input id="limitWarningPercent" name="limitWarningPercent" type="number" min="50" max="99" step="1" inputmode="numeric" required
+              aria-describedby="limitWarningPercent-hint limitWarningPercent-error">
+            <p class="field-hint" id="limitWarningPercent-hint">50–99. Employees at or above this share of their monthly limit get a warning; 100 % is always "exceeded". Limits never block submissions.</p>
+            <p class="field-error" id="limitWarningPercent-error" data-error-for="limitWarningPercent" hidden></p>
+          </div>
+          <div class="field">
+            <div class="switch-row">
+              <label for="allowSignup">Allow public employee signup</label>
+              <input id="allowSignup" name="allowSignup" type="checkbox" aria-describedby="allowSignup-hint">
+            </div>
+            <p class="field-hint" id="allowSignup-hint">When off, the signup page explains that signup is unavailable and no account can be created. Public signup only ever creates Employee accounts.</p>
+          </div>
+          <p class="form-error" role="alert" data-form-error hidden></p>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Save settings</button></div>
+        </form>
+      </section>
+
+      <div class="stack">
+        <section class="card" aria-labelledby="storage-title">
+          <div class="card-header"><h2 id="storage-title">Browser storage</h2></div>
+          <div id="storage"></div>
+        </section>
+
+        <section class="card" aria-labelledby="demo-title">
+          <div class="card-header"><h2 id="demo-title">Demo data</h2><span id="demo-status"></span></div>
+          <div class="stack">
+            <p class="muted small">Demo company: <strong>Sync Systems Pvt Ltd</strong> — 1 admin, 3 managers, employees in every
+              situation, projects, and expenses in every status, created through the app's real workflow.</p>
+            <div class="callout callout-warning">
+              <span aria-hidden="true" data-icon="alert"></span>
+              <p>Both actions <strong>replace all ExpenseX Corporate data in this browser</strong> and log everyone out.
+                Other websites' and apps' browser data is not touched.</p>
+            </div>
+            <div class="row">
+              <button class="btn btn-secondary" type="button" id="load-demo">Load Demo Company</button>
+              <button class="btn btn-danger-ghost" type="button" id="reset-demo">Reset Demo Data</button>
+            </div>
+            <p class="muted xsmall" id="demo-note"></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/demo-data.js"></script>
+  <script src="../js/pages/admin-settings.js"></script>
+</body>
+</html>

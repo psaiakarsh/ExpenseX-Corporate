@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Analytics · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <div class="page-header">
+      <div>
+        <h2>Team analytics</h2>
+        <p>Calculated live from stored expenses in your scope only: your own expenses and the submitted claims of your
+          current team. Spending = Pending + Approved + Reimbursement Pending + Reimbursed.</p>
+      </div>
+    </div>
+
+    <form class="toolbar" id="toolbar" aria-label="Analytics filters" onsubmit="return false">
+      <div class="field">
+        <label for="months">Period (by expense date)</label>
+        <select class="control" id="months" name="months">
+          <option value="3">Last 3 months</option>
+          <option value="6" selected>Last 6 months</option>
+          <option value="12">Last 12 months</option>
+        </select>
+      </div>
+      <div class="field"><label for="employeeId">Employee</label><select class="control" id="employeeId" name="employeeId"></select></div>
+      <div class="field"><label for="projectId">Project</label><select class="control" id="projectId" name="projectId"></select></div>
+    </form>
+
+    <section aria-label="Summary"><div class="stats stats-4" id="stats"></div></section>
+
+    <section class="card" aria-labelledby="monthly-title" style="margin-bottom:24px">
+      <div class="card-header"><h2 id="monthly-title">Monthly spending</h2><span class="muted xsmall" id="period-label"></span></div>
+      <div id="monthly-chart"></div>
+    </section>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <section class="card" aria-labelledby="category-title">
+        <div class="card-header"><h2 id="category-title">Spending by category</h2></div>
+        <div id="category-chart"></div>
+      </section>
+      <section class="card" aria-labelledby="project-title">
+        <div class="card-header"><h2 id="project-title">Spending by project</h2></div>
+        <div id="project-chart"></div>
+      </section>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <section class="card" aria-labelledby="status-title">
+        <div class="card-header"><h2 id="status-title">Status distribution</h2></div>
+        <p class="muted xsmall" style="margin-bottom:12px">Approving an expense moves it straight to Reimbursement Pending, so
+          “Approved” is shown as a history figure below rather than a waiting status.</p>
+        <div id="status-chart"></div>
+        <p class="small" id="approved-line" style="margin-top:12px"></p>
+      </section>
+      <section class="card" aria-labelledby="reimbursement-title">
+        <div class="card-header"><h2 id="reimbursement-title">Reimbursements</h2></div>
+        <div id="reimbursement-chart"></div>
+        <p class="small" id="reimbursement-line" style="margin-top:12px"></p>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="employee-title">
+      <div class="card-header"><h2 id="employee-title">Employee spending</h2></div>
+      <div id="employee-table"></div>
+    </section>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/pages/manager-analytics.js"></script>
+</body>
+</html>

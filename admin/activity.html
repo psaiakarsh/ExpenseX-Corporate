@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Activity · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <div class="page-header">
+      <div>
+        <h2>Activity log</h2>
+        <p>Operational audit trail: accounts, teams, settings, demo data, and approval/reimbursement decisions by expense ID.
+          Expense titles, amounts, comments and receipts are never logged here.</p>
+      </div>
+    </div>
+
+    <form class="toolbar" id="toolbar" role="search" aria-label="Filter activity" onsubmit="return false">
+      <div class="field toolbar-search">
+        <label for="search">Search</label>
+        <input class="control" id="search" name="search" type="search" placeholder="Search summaries">
+      </div>
+      <div class="field"><label for="actorId">Actor</label><select class="control" id="actorId" name="actorId"></select></div>
+      <div class="field"><label for="action">Action</label><select class="control" id="action" name="action"></select></div>
+      <div class="field"><label for="from">From</label><input class="control" id="from" name="from" type="date"></div>
+      <div class="field"><label for="to">To</label><input class="control" id="to" name="to" type="date"></div>
+    </form>
+
+    <p class="result-count" id="count" aria-live="polite"></p>
+    <div id="table"></div>
+    <div class="row" style="justify-content:center;margin-top:16px">
+      <button class="btn btn-ghost" type="button" id="more" hidden>Show more</button>
+    </div>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/pages/admin-activity.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Expense · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <a class="back-link" href="#" id="back-link"></a>
+
+    <div id="blocked" hidden></div>
+
+    <div class="grid-3" id="form-area">
+      <section class="card span-2" aria-labelledby="form-title">
+        <div class="card-header">
+          <div>
+            <h2 id="form-title">New expense</h2>
+            <p class="muted small" id="form-subtitle"></p>
+          </div>
+          <span id="form-status"></span>
+        </div>
+
+        <div class="stack" id="form-callouts" style="margin-bottom:16px"></div>
+
+        <form id="expense-form" class="form" novalidate>
+          <div class="form-grid">
+            <div class="field full" id="owner-field" hidden>
+              <label for="employeeId">Expense for</label>
+              <select id="employeeId" name="employeeId" aria-describedby="employeeId-hint employeeId-error"></select>
+              <p class="field-hint" id="employeeId-hint">Manager-created expenses are approved automatically. Your own are marked “Self-approved”.</p>
+              <p class="field-error" id="employeeId-error" data-error-for="employeeId" hidden></p>
+            </div>
+
+            <div class="field full">
+              <label for="title">Title</label>
+              <input id="title" name="title" required maxlength="80" placeholder="e.g. Flight – Mumbai client visit" aria-describedby="title-error">
+              <p class="field-error" id="title-error" data-error-for="title" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="amount">Amount (₹)</label>
+              <div class="input-prefix">
+                <span aria-hidden="true">₹</span>
+                <input id="amount" name="amount" inputmode="decimal" autocomplete="off" required placeholder="0.00" aria-describedby="amount-hint amount-error">
+              </div>
+              <p class="field-hint" id="amount-hint">Up to ₹10,00,000 with at most 2 decimals.</p>
+              <p class="field-error" id="amount-error" data-error-for="amount" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="date">Expense date</label>
+              <input id="date" name="date" type="date" required aria-describedby="date-error">
+              <p class="field-error" id="date-error" data-error-for="date" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category" name="category" required aria-describedby="category-error"></select>
+              <p class="field-error" id="category-error" data-error-for="category" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="projectId">Project</label>
+              <select id="projectId" name="projectId" aria-describedby="projectId-error"></select>
+              <p class="field-error" id="projectId-error" data-error-for="projectId" hidden></p>
+            </div>
+
+            <div class="field full">
+              <label for="notes">Description <span class="optional">(optional)</span></label>
+              <textarea id="notes" name="notes" maxlength="500" rows="3" placeholder="Business purpose, attendees, anything the reviewer should know" aria-describedby="notes-error"></textarea>
+              <p class="field-error" id="notes-error" data-error-for="notes" hidden></p>
+            </div>
+
+            <div class="field full">
+              <label for="receipt">Receipt image <span class="optional">(optional)</span></label>
+              <div class="receipt-drop">
+                <div class="receipt-preview" id="receipt-preview"></div>
+                <div class="row">
+                  <input id="receipt" type="file" class="control grow" accept="image/jpeg,image/png,image/webp,image/gif" aria-describedby="receipt-hint receipt-error">
+                  <button class="btn btn-ghost btn-sm" type="button" id="remove-receipt" hidden>Remove receipt</button>
+                </div>
+                <p class="field-hint" id="receipt-hint">JPG, PNG, WEBP or GIF up to 5 MB. Images are resized and stored in this browser.</p>
+                <p class="field-error" id="receipt-error" data-error-for="receipt" hidden></p>
+              </div>
+            </div>
+          </div>
+
+          <p class="form-error" role="alert" data-form-error hidden></p>
+          <div class="form-actions" id="form-actions"></div>
+        </form>
+      </section>
+
+      <aside class="card" aria-labelledby="limit-title">
+        <div class="card-header"><h2 id="limit-title">Monthly limit check</h2></div>
+        <div id="limit-preview" aria-live="polite"></div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/pages/expense-form.js"></script>
+</body>
+</html>

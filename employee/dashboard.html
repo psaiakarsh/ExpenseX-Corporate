@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Dashboard · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <div class="page-header">
+      <div>
+        <h2 id="greeting">Welcome</h2>
+        <p id="team-line"></p>
+      </div>
+      <a class="btn btn-primary" href="../shared/expense-form.html">New expense</a>
+    </div>
+
+    <div id="assignment-banner" class="callout callout-warning" role="status" hidden style="margin-bottom:24px"></div>
+
+    <section aria-label="Expense summary"><div class="stats" id="stats"></div></section>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <section class="card" aria-labelledby="limit-title">
+        <div class="card-header"><h2 id="limit-title">Monthly spending limit</h2></div>
+        <div id="limit"></div>
+      </section>
+      <section class="card" aria-labelledby="status-title">
+        <div class="card-header"><h2 id="status-title">Status breakdown</h2><a href="expenses.html">View expenses</a></div>
+        <div id="status-chart"></div>
+      </section>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <section class="card" aria-labelledby="monthly-title">
+        <div class="card-header"><h2 id="monthly-title">Monthly spending</h2><span class="muted xsmall">Last 6 months</span></div>
+        <div id="monthly-chart"></div>
+      </section>
+      <section class="card" aria-labelledby="category-title">
+        <div class="card-header"><h2 id="category-title">Spending by category</h2></div>
+        <div id="category-chart"></div>
+      </section>
+    </div>
+
+    <div class="grid-2">
+      <section class="card" aria-labelledby="recent-title">
+        <div class="card-header"><h2 id="recent-title">Recent expenses</h2><a href="expenses.html">View all</a></div>
+        <div id="recent"></div>
+      </section>
+      <section class="card" aria-labelledby="notifications-title">
+        <div class="card-header">
+          <h2 id="notifications-title">Notifications</h2>
+          <div class="row"><span id="unread-count"></span><a href="../shared/notifications.html">View all</a></div>
+        </div>
+        <div id="notifications"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/pages/employee-dashboard.js"></script>
+</body>
+</html>

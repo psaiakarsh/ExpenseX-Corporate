@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <title>Team Expenses · ExpenseX Corporate</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-root="../">
+  <main id="main" class="page" tabindex="-1" hidden>
+    <div class="page-header">
+      <div>
+        <h2>Team expenses</h2>
+        <p>Your own expenses and the submitted claims of employees currently in your team. Employees’ unsent drafts stay private.</p>
+      </div>
+      <a class="btn btn-primary" href="../shared/expense-form.html" id="new-expense">New expense</a>
+    </div>
+
+    <form class="toolbar" id="toolbar" role="search" aria-label="Filter team expenses" onsubmit="return false">
+      <div class="field toolbar-search">
+        <label for="search">Search</label>
+        <input class="control" id="search" name="search" type="search" placeholder="Title, employee, project…">
+      </div>
+      <div class="field"><label for="employeeId">Employee</label><select class="control" id="employeeId" name="employeeId"></select></div>
+      <div class="field"><label for="status">Status</label><select class="control" id="status" name="status"></select></div>
+      <div class="field"><label for="category">Category</label><select class="control" id="category" name="category"></select></div>
+      <div class="field"><label for="projectId">Project</label><select class="control" id="projectId" name="projectId"></select></div>
+      <div class="field"><label for="month">Month</label><select class="control" id="month" name="month"></select></div>
+      <div class="field">
+        <label for="sort">Sort</label>
+        <select class="control" id="sort" name="sort">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="updated">Recently updated</option>
+          <option value="highest">Highest amount</option>
+          <option value="lowest">Lowest amount</option>
+        </select>
+      </div>
+    </form>
+
+    <p class="result-count" id="count" aria-live="polite"></p>
+    <div id="list"></div>
+    <div class="row" style="justify-content:center;margin-top:16px">
+      <button class="btn btn-ghost" type="button" id="more" hidden>Show more</button>
+    </div>
+  </main>
+
+  <script src="../js/core/constants.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/money.js"></script>
+  <script src="../js/core/dates.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/permissions.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/activity.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/projects.js"></script>
+  <script src="../js/limits.js"></script>
+  <script src="../js/receipts.js"></script>
+  <script src="../js/expenses.js"></script>
+  <script src="../js/reimbursements.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/expense-view.js"></script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/pages/manager-expenses.js"></script>
+</body>
+</html>
